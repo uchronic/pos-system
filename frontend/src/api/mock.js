@@ -1,17 +1,20 @@
+const BASE = import.meta.env.BASE_URL || '/'
+const img = (name) => `${BASE}images/${name}`
+
 const mockData = {
   dashboard: { productCount: 10, memberCount: 4, orderCount: 3, storeCount: 3, todaySales: '250.50', totalSales: '18650.00' },
   products: {
     content: [
-      { id: 1, name: '农夫山泉550ml', barcode: '6921168509256', categoryId: 1, categoryName: '食品饮料', price: 2.00, costPrice: 1.20, marketPrice: 2.50, stock: 500, status: 1, imageUrl: '/images/product-water.jpg' },
-      { id: 2, name: '可口可乐330ml', barcode: '6902083883065', categoryId: 1, categoryName: '食品饮料', price: 3.00, costPrice: 1.80, marketPrice: 3.50, stock: 300, status: 1, imageUrl: '/images/product-cola.jpg' },
-      { id: 3, name: '伊利纯牛奶250ml', barcode: '6907992500218', categoryId: 1, categoryName: '食品饮料', price: 4.50, costPrice: 3.00, marketPrice: 5.00, stock: 200, status: 1, imageUrl: '/images/product-milk.jpg' },
-      { id: 4, name: '红富士苹果(斤)', barcode: '2000000000001', categoryId: 2, categoryName: '生鲜水果', price: 6.80, costPrice: 4.00, marketPrice: 8.00, stock: 150, status: 1, imageUrl: '/images/product-apple.jpg' },
-      { id: 5, name: '进口香蕉(斤)', barcode: '2000000000002', categoryId: 2, categoryName: '生鲜水果', price: 5.50, costPrice: 3.50, marketPrice: 7.00, stock: 120, status: 1, imageUrl: '/images/product-banana.jpg' },
-      { id: 6, name: '维达抽纸3层', barcode: '6903266731087', categoryId: 3, categoryName: '日用百货', price: 12.90, costPrice: 8.00, marketPrice: 15.90, stock: 80, status: 1, imageUrl: '/images/product-tissue.jpg' },
-      { id: 7, name: '舒肤佳香皂', barcode: '6903148040329', categoryId: 6, categoryName: '美妆个护', price: 6.50, costPrice: 4.00, marketPrice: 8.00, stock: 100, status: 1, imageUrl: '/images/product-soap.jpg' },
-      { id: 8, name: '华为充电器', barcode: '6941487210012', categoryId: 4, categoryName: '数码家电', price: 59.00, costPrice: 35.00, marketPrice: 79.00, stock: 50, status: 1, imageUrl: '/images/product-charger.jpg' },
-      { id: 9, name: '纯棉T恤(男)', barcode: '3000000000001', categoryId: 5, categoryName: '服装鞋帽', price: 89.00, costPrice: 45.00, marketPrice: 129.00, stock: 60, status: 1, imageUrl: '/images/product-tshirt.jpg' },
-      { id: 10, name: '百事可乐500ml', barcode: '6920459950180', categoryId: 1, categoryName: '食品饮料', price: 3.50, costPrice: 2.00, marketPrice: 4.00, stock: 280, status: 1, imageUrl: '/images/product-pepsi.jpg' }
+      { id: 1, name: '农夫山泉550ml', barcode: '6921168509256', categoryId: 1, categoryName: '食品饮料', price: 2.00, costPrice: 1.20, marketPrice: 2.50, stock: 500, status: 1, imageUrl: img('product-water.jpg') },
+      { id: 2, name: '可口可乐330ml', barcode: '6902083883065', categoryId: 1, categoryName: '食品饮料', price: 3.00, costPrice: 1.80, marketPrice: 3.50, stock: 300, status: 1, imageUrl: img('product-cola.jpg') },
+      { id: 3, name: '伊利纯牛奶250ml', barcode: '6907992500218', categoryId: 1, categoryName: '食品饮料', price: 4.50, costPrice: 3.00, marketPrice: 5.00, stock: 200, status: 1, imageUrl: img('product-milk.jpg') },
+      { id: 4, name: '红富士苹果(斤)', barcode: '2000000000001', categoryId: 2, categoryName: '生鲜水果', price: 6.80, costPrice: 4.00, marketPrice: 8.00, stock: 150, status: 1, imageUrl: img('product-apple.jpg') },
+      { id: 5, name: '进口香蕉(斤)', barcode: '2000000000002', categoryId: 2, categoryName: '生鲜水果', price: 5.50, costPrice: 3.50, marketPrice: 7.00, stock: 120, status: 1, imageUrl: img('product-banana.jpg') },
+      { id: 6, name: '维达抽纸3层', barcode: '6903266731087', categoryId: 3, categoryName: '日用百货', price: 12.90, costPrice: 8.00, marketPrice: 15.90, stock: 80, status: 1, imageUrl: img('product-tissue.jpg') },
+      { id: 7, name: '舒肤佳香皂', barcode: '6903148040329', categoryId: 6, categoryName: '美妆个护', price: 6.50, costPrice: 4.00, marketPrice: 8.00, stock: 100, status: 1, imageUrl: img('product-soap.jpg') },
+      { id: 8, name: '华为充电器', barcode: '6941487210012', categoryId: 4, categoryName: '数码家电', price: 59.00, costPrice: 35.00, marketPrice: 79.00, stock: 50, status: 1, imageUrl: img('product-charger.jpg') },
+      { id: 9, name: '纯棉T恤(男)', barcode: '3000000000001', categoryId: 5, categoryName: '服装鞋帽', price: 89.00, costPrice: 45.00, marketPrice: 129.00, stock: 60, status: 1, imageUrl: img('product-tshirt.jpg') },
+      { id: 10, name: '百事可乐500ml', barcode: '6920459950180', categoryId: 1, categoryName: '食品饮料', price: 3.50, costPrice: 2.00, marketPrice: 4.00, stock: 280, status: 1, imageUrl: img('product-pepsi.jpg') }
     ], totalElements: 10, totalPages: 1, page: 0, size: 10
   },
   categories: [
