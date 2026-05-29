@@ -13,6 +13,12 @@
       </el-form>
       <el-table :data="tableData" stripe border v-loading="loading">
         <el-table-column prop="id" label="ID" width="60" />
+        <el-table-column label="图片" width="80">
+          <template #default="{ row }">
+            <el-image v-if="row.imageUrl" :src="row.imageUrl" style="width:50px;height:50px;border-radius:6px" fit="cover" :preview-src-list="[row.imageUrl]" />
+            <div v-else style="width:50px;height:50px;background:#f5f7fa;border-radius:6px;display:flex;align-items:center;justify-content:center"><el-icon color="#c0c4cc"><Picture /></el-icon></div>
+          </template>
+        </el-table-column>
         <el-table-column prop="name" label="商品名称" min-width="120" />
         <el-table-column prop="barcode" label="条码" width="130" />
         <el-table-column prop="categoryName" label="分类" width="100" />
